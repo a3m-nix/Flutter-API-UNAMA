@@ -1,12 +1,8 @@
+import 'package:flutter_proyek_nim/app/data/base_api_provider.dart';
 import 'package:get/get.dart';
 
-class RegisterProvider extends GetConnect {
+class RegisterProvider extends BaseApiProvider {
   Future<Response<dynamic>> postData(var data) async {
-    Map<String, String> headers = {
-      'Accept': 'application/json',
-    };
-    return await post(
-        'http://belajar-api.unama.ac.id/api/register?delay=5', data,
-        headers: headers);
+    return await post('$apiUrl/register?delay=2', data, headers: headers);
   }
 }
